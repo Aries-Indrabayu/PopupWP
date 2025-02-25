@@ -1,0 +1,1 @@
+<div id="artistudio-popup"></div>

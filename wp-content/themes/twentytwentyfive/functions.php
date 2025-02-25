@@ -156,3 +156,9 @@ if ( ! function_exists( 'twentytwentyfive_format_binding' ) ) :
 		}
 	}
 endif;
+
+add_action('wp_head', function() {
+    if (is_user_logged_in()) {
+        echo '<script>var wpRestNonce = "' . wp_create_nonce('wp_rest') . '";</script>';
+    }
+});
