@@ -6,11 +6,11 @@ Artistudio Popup adalah plugin WordPress yang memungkinkan Anda untuk membuat da
 
 ## Fitur
 
-- **Custom Post Type (CPT)**: Menggunakan CPT dengan nama `popup` untuk mengelola konten popup.
-- **REST API**: Endpoint khusus untuk mengambil data popup menggunakan namespace `artistudio/v1`.
-- **OOP Structure**: Dibangun dengan pendekatan Object-Oriented Programming untuk kemudahan pemeliharaan.
-- **Nonce & Authentication**: Menggunakan WordPress Nonce dan cookie `wordpress_logged_in` untuk autentikasi API.
-- **Integrasi Frontend**: Mudah diintegrasikan dengan React atau Vue untuk menampilkan popup secara dinamis.
+-   **Custom Post Type (CPT)**: Menggunakan CPT dengan nama `popup` untuk mengelola konten popup.
+-   **REST API**: Endpoint khusus untuk mengambil data popup menggunakan namespace `artistudio/v1`.
+-   **OOP Structure**: Dibangun dengan pendekatan Object-Oriented Programming untuk kemudahan pemeliharaan.
+-   **Nonce & Authentication**: Menggunakan WordPress Nonce dan cookie `wordpress_logged_in` untuk autentikasi API.
+-   **Integrasi Frontend**: Mudah diintegrasikan dengan React atau Vue untuk menampilkan popup secara dinamis.
 
 ---
 
@@ -18,24 +18,24 @@ Artistudio Popup adalah plugin WordPress yang memungkinkan Anda untuk membuat da
 
 1. **Clone Repository atau Download ZIP**
 
-   - Clone repository:
-     ```bash
-     git clone https://github.com/username/artistudio-popup.git
-     ```
-   - Atau download file ZIP, kemudian extract ke dalam folder:
-     ```
-     wp-content/plugins/artistudio-popup
-     ```
+    - Clone repository:
+        ```bash
+        git clone https://github.com/username/artistudio-popup.git
+        ```
+    - Atau download file ZIP, kemudian extract ke dalam folder:
+        ```
+        wp-content/plugins/artistudio-popup
+        ```
 
 2. **Aktifkan Plugin**
 
-   - Buka Dashboard WordPress.
-   - Navigasi ke **Plugins > Installed Plugins**.
-   - Aktifkan plugin **Artistudio Popup**.
+    - Buka Dashboard WordPress.
+    - Navigasi ke **Plugins > Installed Plugins**.
+    - Aktifkan plugin **Artistudio Popup**.
 
 3. **Flush Permalinks**  
    Setelah mengaktifkan plugin, lakukan flush permalinks:
-   - **Settings > Permalinks** > klik **Save Changes**.
+    - **Settings > Permalinks** > klik **Save Changes**.
 
 ---
 
@@ -83,36 +83,36 @@ artistudio-popup/
 
 1. **Pastikan User Sudah Login:**
 
-   - Endpoint API memerlukan autentikasi pengguna yang sudah login.
-   - Gunakan `X-WP-Nonce` dan `Cookie` `wordpress_logged_in`.
+    - Endpoint API memerlukan autentikasi pengguna yang sudah login.
+    - Gunakan `X-WP-Nonce` dan `Cookie` `wordpress_logged_in`.
 
 2. **Periksa Nonce:**
 
-   - Dapatkan Nonce dengan melakukan enqueuing di theme atau plugin:
-     ```php
-     wp_localize_script('your-script-handle', 'wpApiSettings', [
-         'root' => esc_url_raw(rest_url()),
-         'nonce' => wp_create_nonce('wp_rest')
-     ]);
-     ```
-   - Gunakan nonce ini di `X-WP-Nonce` pada request.
+    - Dapatkan Nonce dengan melakukan enqueuing di theme atau plugin:
+        ```php
+        wp_localize_script('your-script-handle', 'wpApiSettings', [
+            'root' => esc_url_raw(rest_url()),
+            'nonce' => wp_create_nonce('wp_rest')
+        ]);
+        ```
+    - Gunakan nonce ini di `X-WP-Nonce` pada request.
 
 3. **Cek Debugging:**
-   - Aktifkan **WP_DEBUG** dan **WP_DEBUG_LOG** di `wp-config.php`:
-     ```php
-     define('WP_DEBUG', true);
-     define('WP_DEBUG_LOG', true);
-     ```
-   - Lihat log di: `wp-content/debug.log`
+    - Aktifkan **WP_DEBUG** dan **WP_DEBUG_LOG** di `wp-config.php`:
+        ```php
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+        ```
+    - Lihat log di: `wp-content/debug.log`
 
 ---
 
 ## Rencana Pengembangan
 
-- [ ] CRUD untuk popup (Create, Read, Update, Delete)
-- [ ] Integrasi dengan React atau Vue.js di frontend
-- [ ] Styling dengan Tailwind CSS
-- [ ] Custom Settings di Dashboard WordPress
+-   [ ] CRUD untuk popup (Create, Read, Update, Delete)
+-   [ ] Integrasi dengan React atau Vue.js di frontend
+-   [ ] Styling dengan Tailwind CSS
+-   [ ] Custom Settings di Dashboard WordPress
 
 ---
 
